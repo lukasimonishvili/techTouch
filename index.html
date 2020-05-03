@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+    <link rel="shortcut icon" href="./img/title.png" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Tech Touch</title>
+  </head>
+  <body>
+    <aside class="aside">
+      <a href="#" class="naviagate"> <span>home</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>speakers</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>topics</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>agenda</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>tickets</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>partners</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>guide</span> </a>
+      <div class="line"></div>
+      <a href="#" class="naviagate"> <span>contact</span> </a>
+    </aside>
+    <main class="main">
+      <section class="home">
+        <div id="home">
+          <img src="./img/cover.png" alt="" class="cover" />
+          <img src="./img/logo.png" alt="" class="logo" />
+          <div class="dragable">
+            <img
+              src="./img/x.png"
+              alt=""
+              class="close"
+              onclick="home.close(this)"
+            />
+            <img src="./img/home-drag-2.png" alt="" />
+          </div>
+          <div class="dragable">
+            <img
+              src="./img/x.png"
+              alt=""
+              class="close"
+              onclick="home.close(this)"
+            />
+            <img src="./img/home-drag-1.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <div class="info">
+        <p>
+          Helps business owners understand how to overcome the economic crisis
+          and build resistant companies.
+        </p>
+        <img src="./img/info-line.svg" alt="" />
+        <p>
+          Offers developers an opportunity to overview the latest global IT
+          industry trends.
+        </p>
+        <img src="./img/info-line.svg" alt="" />
+        <p>
+          Showcases potential talents and digital solutions for enterprises and
+          startups.
+        </p>
+      </div>
+      <section class="speakers">
+        <div class="speakers__container">
+          <div class="speakers__header">
+            <h2 class="speakers__title">Speakers</h2>
+            <a href="#" class="speakers__link">Get the tickets</a>
+          </div>
+          <div class="speakers__wrapper">
+            <div class="speakers__back">
+              <img class="visible" src="./img/cybersecurity.png" alt="" />
+              <img class="visible" src="./img/fintech.png" alt="" />
+              <img class="visible" src="./img/remote-work.png" alt="" />
+              <img src="./img/e-coomerce.png" alt="" class="visible" />
+              <img src="./img/audio.png" alt="" class="hidden" />
+              <img
+                src="./img/star.png"
+                alt=""
+                class="visible"
+                id="speakerStar"
+              />
+              <img
+                src="./img/arrow-right.png"
+                alt=""
+                class="visible"
+                onclick="speakers.next()"
+                id="speakerNext"
+              />
+              <img
+                src="./img/arrow-left.png"
+                alt=""
+                class="hidden"
+                id="speakerPrev"
+                onclick="speakers.prev()"
+              />
+            </div>
+            <div class="speakers__slider">
+              <!-- E A C H   4   S P E A K E R   I N F O M A T I O N    M U S T   G O
+              T O   "speaker__group"   C L A S S   D I V
+              I T ` S   S U P E R   I M P O R T A N T -->
+              <div class="speakers__group">
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      <!-- S P E A K E R   J O B   P O S I T I O N -->
+                      Head of Startup Ecosystem CEE-CIS-RUS
+                      <!-- S P E A K E R   J O B   P O S I T I O N -->
+                      <br />
+                      <span>at</span>
+                      <!-- S P E A K E R   J O B   P L A C E -->
+                      Amazon Web Services
+                      <!-- S P E A K E R   J O B   P L A C E -->
+                    </p>
+                  </div>
+                  <div>
+                    <span>
+                      <!-- S P E A K E R   F U L L   N A M E  -->
+                      Alex Serdiuk
+                      <!-- S P E A K E R   F U L L   N A M E  -->
+                    </span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <!-- S P E A K E R   I M A G E -->
+                  <img src="./img/speaker.png" alt="" />
+                  <!-- S P E A K E R   I M A G E -->
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Andre Nazareth</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Kate Luchaninova</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Mikkel Preisler</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+              </div>
+              <div class="speakers__group">
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <!-- S P E K E R   C O U N T R Y -->
+                    <div>Germany</div>
+                    <!-- S P E K E R   C O U N T R Y -->
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Antonio Nasuto</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Andre Nazareth</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Kate Luchaninova</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+                <div class="speaker">
+                  <div class="info">
+                    <img src="./img/arrow-right.png" alt="" />
+                    <div>Germany</div>
+                    <p>
+                      Head of Startup Ecosystem CEE-CIS-RUS <br />
+                      <span>at</span> Amazon Web Services
+                    </p>
+                  </div>
+                  <div>
+                    <span>Mikkel Preisler</span>
+                    <img
+                      src="./img/x.png"
+                      alt=""
+                      onclick="speakers.toggleInfo(this)"
+                    />
+                  </div>
+                  <img src="./img/speaker.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="topics">
+        <h2 class="topics__title">Topics</h2>
+        <ul class="topics__list">
+          <li>
+            <h4>
+              <!-- T O P I C   T I T L E  -->
+              Big Data, AI / ML
+              <!-- T O P I C   T I T L E  -->
+            </h4>
+            <p>
+              <!-- T O P I C   D E S C R I P T I O N  -->
+              Collecting Big Data, analysing and using it to understand and
+              predict the customer behaviour.
+              <!-- T O P I C   D E S C R I P T I O N  -->
+            </p>
+          </li>
+          <li>
+            <h4>E-commerce</h4>
+            <p>
+              How to keep the operations running, cut off the burdens, keep the
+              team and sales working.
+            </p>
+          </li>
+          <li>
+            <h4>Cloud Tech</h4>
+            <p>
+              how the companies can use the cloud technologies to run their
+              business online.
+            </p>
+          </li>
+          <li>
+            <h4>Fintech</h4>
+            <p>
+              New solutions for business, retail banking, digital banking,
+              startups & banks.
+            </p>
+          </li>
+          <li>
+            <h4>Travel & Hospitality</h4>
+            <p>
+              How to prepare for the boom after the crisis, will the boom
+              actually be there, next season expectations.
+            </p>
+          </li>
+          <li>
+            <h4>Remote work</h4>
+            <p>
+              How the crisis will make us more global and open new
+              opportunities; going global - new wave.
+            </p>
+          </li>
+          <li>
+            <h4>Cybersecurity</h4>
+            <p>
+              Protecting the company data while working online, employee privacy
+              issues.
+            </p>
+          </li>
+          <li>
+            <h4>Startups survival</h4>
+            <p>
+              What the investors think, what the founders should know to
+              survive.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <div class="orange"></div>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

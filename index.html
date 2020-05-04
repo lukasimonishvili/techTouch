@@ -366,6 +366,8 @@
                 <img src="./img/down.svg" alt="" id="agendaNext" onclick="agenda.next()" />
               </div>
               <div class="agenda__container">
+                <!-- 1 ul tag is must contain 1 day agenda and must have id of day
+                for example if aganeda is about 29 may - id must be "29" -->
                 <ul class="agenda__slider active" id="29">
                   <li class="agenda__item">
                     <span class="agenda__time">
@@ -751,7 +753,121 @@
           </div>
         </div>
       </section>
-      <section class="tickets"></section>
+
+
+      <section class="tickets">
+        <h2 class="tickets__title">Tickets</h2>
+        <div class="tickets__wrapper">
+          <di class="ticket__button">Get it now</di>
+          <div class="ticket">
+            <h4>Student ticket</h4>
+            <div class="ticket__line"></div>
+            <div class="ticket__access">
+              <span>Access to:</span>
+              <div class="ticket__access__list">
+                <span>Talks/workshops</span>
+                <span>The hackathon presentations</span>
+                <div class="private"></div>
+                <div class="price">26 gel</div>
+              </div>
+            </div>
+          </div>
+          <div class="ticket">
+            <h4>Regulat ticket</h4>
+            <div class="ticket__line"></div>
+            <div class="ticket__access">
+              <span>Access to:</span>
+              <div class="ticket__access__list">
+                <span>Talks/workshops</span>
+                <span>The hackathon presentations</span>
+                <div class="private">
+                  <span>1-1 meetings scheduling</span>
+                </div>
+                <div class="price">26 gel</div>
+              </div>
+            </div>
+          </div>
+          <div class="ticket">
+            <h4>Business ticket</h4>
+            <div class="ticket__line"></div>
+            <div class="ticket__access">
+              <span>Access to:</span>
+              <div class="ticket__access__list">
+                <span>Talks/workshops</span>
+                <span>The hackathon presentations</span>
+                <span>The speakers’ slides and talks records</span>
+                <div class="private">
+                  <span>1-1 meetings scheduling</span>
+                  <span>1-1 meeting with 2 speakers</span>
+                </div>
+                <div class="price">26 gel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners">
+        <h2 class="partners__title">Partners</h2>
+        <ul>
+          <li>Onesoul</li>
+          <li>Studio impulse</li>
+          <li>GITA</li>
+          <li>Impact Hub Tbilisi</li>
+          <li>IBM</li>
+          <li>On.ge</li>
+          <li>Marketer</li>
+          <li>CBW</li>
+          <li>Entrepreneur</li>
+        </ul>
+      </section>
+
+      <section class="guide" id="guide">
+        <div class="guide__container">
+          <h2 class="guide__title">Guide</h2>
+          <img src="./img/guide.png" alt="" class="guide__cover">
+        </div>
+        <div id="guideDrag">
+          <div class="dragable">
+            <img src="./img/x.png" alt="" class="close">
+            <img src="./img/home-drag-2.png" alt="">
+          </div>
+          <div class="dragable">
+            <div>
+              <h4>How to participate</h4>
+              <img src="./img/x.png" alt="" class="close">
+            </div>
+            <p>For the online conference, we will use the web application, where the attendees will be able to access the talks live stream, live chat with speakers, the opportunity to publish their attendee profiles for others to see and hire or partner, arranging 1-1 calls with other attendees, take part in activations by Touch partners.</p>
+          </div>
+          <div class="dragable">
+            <div>
+              <h4>Access</h4>
+              <img src="./img/x.png" alt="" class="close">
+            </div>
+            <p>To get access to the event application, you will need to buy the ticket, fill in the profile to complete registration (via email), and later on, you will get the invitation to edit and use your profile in the event application.</p>
+          </div>
+        </div>
+      </section>
+      <section class="contact">
+        <h2 class="contact__title">Contact</h2>
+        <div class="contact__wrapper">
+          <div class="left">
+            <span>info@touch.ge</span>
+            <span>+380 63 5193785  [WhatsApp]</span>
+          </div>
+          <img src="./img/info-line.svg" alt="">
+          <div class="center">
+            <span>Facebook</span>
+            <span>Instagram</span>
+            <span>LinkedIn</span>
+          </div>
+          <img src="./img/info-line.svg" alt="">
+          <div class="right">
+            <span>Designed by studio</span>
+            <span>impulse</span>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="./js/index.js"></script>
   </body>

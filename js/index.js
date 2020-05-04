@@ -288,7 +288,6 @@ let agenda = {
       agenda.prevButton.style.opacity = "1";
       agenda.prevButton.style.pointerEvents = "auto";
       agenda.lastAction = "next";
-      agenda.allowSlide = true;
     }
   },
   prev: () => {
@@ -306,7 +305,6 @@ let agenda = {
       agenda.nextButton.style.opacity = "1";
       agenda.nextButton.style.pointerEvents = "auto";
       agenda.lastAction = "prev";
-      agenda.allowSlide = true;
     }
   },
   handleTransitionEnd: () => {
@@ -340,4 +338,159 @@ let agenda = {
 let slides = document.getElementsByClassName("agenda__slider");
 for (let i = 0; i < slides.length; i++) {
   slides[i].addEventListener("transitionend", agenda.handleTransitionEnd);
+}
+
+//guide scripts
+
+let guide = {
+  mouseDonw: false,
+  dragWrapper: document.getElementById("guideDrag"),
+  dragableElement: null,
+  dataToactivate: 2,
+  zIndex: 4,
+  data: [
+    {
+      title: "How to participate",
+      description:
+        "For the online conference, we will use the web application, where the attendees will be able to access the talks live stream, live chat with speakers, the opportunity to publish their attendee profiles for others to see and hire or partner, arranging 1-1 calls with other attendees, take part in activations by Touch partners.",
+    },
+    {
+      title: "Access",
+      description:
+        "To get access to the event application, you will need to buy the ticket, fill in the profile to complete registration (via email), and later on, you will get the invitation to edit and use your profile in the event application.",
+    },
+    {
+      title: "guide 3",
+      description:
+        "hello fashion tv, my name is zauri i love xmauri and aurzauri",
+    },
+    {
+      title: "guide 4",
+      description: "kai bichiba tu torti? mandarini brat!",
+    },
+  ],
+  getDragableElement: (e) => {
+    return e.classList[0] == "close" || e.classList[0] == "dragable"
+      ? e
+      : e.parentNode.classList[0] == "dragable"
+      ? e.parentNode
+      : e.parentNode.parentNode;
+  },
+  handleMouseDown: (e) => {
+    let element = guide.getDragableElement(e.target);
+
+    if (element.classList[0] === "close") {
+      guide.close(element);
+      return;
+    }
+    element.style.transform = "translate(0)";
+    guide.dragWrapper.style.cursor = "pointer";
+    guide.zIndex++;
+    element.style.zIndex = guide.zIndex;
+    element.children[0].style.zIndex = guide.zIndex * 2;
+
+    for (let i = 0; i < guide.dragWrapper.children.length; i++) {
+      guide.dragWrapper.children[i].style.pointerEvents = "none";
+      guide.dragWrapper.children[i].style.userSelect = "none";
+    }
+
+    guide.mouseDonw = true;
+    guide.dragableElement = element;
+  },
+  handleMouseMove: (e) => {
+    if (guide.mouseDonw) {
+      let x =
+        e.layerX -
+        +getComputedStyle(guide.dragableElement).width.split("px")[0] / 2;
+      let y = e.layerY - 10;
+      console.log("x", x);
+      console.log("y", y);
+      guide.dragableElement.style.left = x + "px";
+      guide.dragableElement.style.top = y + "px";
+    }
+  },
+  handleMouseUp: () => {
+    guide.mouseDonw = false;
+    for (let i = 0; i < guide.dragWrapper.children.length; i++) {
+      guide.dragWrapper.children[i].style.pointerEvents = "auto";
+      guide.dragWrapper.children[i].style.userSelect = "auto";
+      guide.dragWrapper.style.cursor = "auto";
+    }
+  },
+  close: (e) => {
+    if (e.nextElementSibling) {
+      return;
+    } else {
+      let index =
+        guide.dataToactivate >= guide.data.length ? 0 : guide.dataToactivate;
+      let parent = e.parentNode.parentNode;
+      parent.style.transition = ".4s";
+      parent.style.transform = "scale(0)";
+      e.previousElementSibling.innerHTML = guide.data[index].title;
+      e.parentNode.nextElementSibling.innerHTML = guide.data[index].description;
+
+      setTimeout(() => {
+        parent.style.transform = "scale(1)";
+      }, 500);
+
+      setTimeout(() => {
+        parent.style.transition = "0s";
+      }, 1000);
+
+      guide.dataToactivate = index + 1;
+    }
+  },
+  handleTouchStart: (e) => {
+    let element = guide.getDragableElement(e.target);
+
+    if (element.classList[0] === "close") {
+      guide.close(element);
+      return;
+    }
+    element.style.transform = "translate(0)";
+
+    guide.zIndex++;
+    element.style.zIndex = guide.zIndex;
+    element.children[0].style.zIndex = guide.zIndex * 2;
+    guide.dragableElement = element;
+  },
+  handleTouchMove: (e) => {
+    e.preventDefault();
+    let canvas = guide.dragWrapper;
+    function getPosition(element) {
+      var xPosition = 0;
+      var yPosition = 0;
+
+      while (element) {
+        xPosition +=
+          element.offsetLeft - element.scrollLeft + element.clientLeft;
+        yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+        element = element.offsetParent;
+      }
+
+      return { x: xPosition, y: yPosition };
+    }
+
+    let canvasPosition = getPosition(canvas);
+
+    let x =
+      e.targetTouches[0].pageX -
+      canvasPosition.x -
+      +getComputedStyle(guide.dragableElement).width.split("px")[0] / 2;
+    let y = e.targetTouches[0].pageY - canvasPosition.y - 10;
+
+    guide.dragableElement.style.left = x + "px";
+    guide.dragableElement.style.top = y + "px";
+  },
+};
+
+guide.dragWrapper.addEventListener("mousemove", guide.handleMouseMove);
+guide.dragWrapper.addEventListener("mouseup", guide.handleMouseUp);
+for (let i = 0; i < guide.dragWrapper.children.length; i++) {
+  let element = guide.dragWrapper.children[i];
+  if (element.classList[0] === "dragable") {
+    element.addEventListener("mousedown", guide.handleMouseDown);
+    element.addEventListener("touchstart", guide.handleTouchStart);
+    element.addEventListener("touchmove", guide.handleTouchMove);
+  }
 }

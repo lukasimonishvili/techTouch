@@ -225,11 +225,119 @@ let speakers = {
         speakers.nextButton.classList.remove("hidden");
       }
     }
-
-    // element.classList.toggle("active");
   },
 };
 
 if (speakers.slides.length) {
   speakers.slides[0].classList.add("active");
+}
+
+// agenda scripts
+
+let agenda = {
+  allowSlide: true,
+  counter: 0,
+  sliderWrapper: document.getElementsByClassName("agenda__slider")[0],
+  slides: document.getElementById("29").getElementsByClassName("agenda__item"),
+  nextButton: document.getElementById("agendaNext"),
+  prevButton: document.getElementById("agendaPrev"),
+  lastAction: "",
+  elementToPrev: null,
+  isVisible: (element) => {
+    let rect = element.getBoundingClientRect();
+    let elemTop = rect.top;
+    let elemBottom = rect.bottom;
+    return elemTop >= 0 && elemBottom <= window.innerHeight;
+  },
+  getTistanceToTop: (element) => {
+    var yPosition = 0;
+
+    while (element) {
+      yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+      element = element.offsetParent;
+    }
+
+    return yPosition;
+  },
+  next: () => {
+    if (agenda.allowSlide) {
+      agenda.allowSlide = false;
+      let lastResult;
+      let elementToActivate;
+
+      for (let i = 0; i < agenda.slides.length; i++) {
+        let element = agenda.slides[i];
+        let isVisible = agenda.isVisible(element);
+
+        if (lastResult && !isVisible) {
+          elementToActivate = agenda.slides[i - 1];
+          agenda.elementToPrev = agenda.slides[i - 2];
+          break;
+        } else {
+          lastResult = isVisible;
+        }
+      }
+
+      let distance =
+        agenda.getTistanceToTop(agenda.sliderWrapper) -
+        agenda.getTistanceToTop(elementToActivate);
+      agenda.counter = distance;
+
+      agenda.sliderWrapper.style.transform = `translateY(${distance}px)`;
+
+      agenda.prevButton.style.opacity = "1";
+      agenda.prevButton.style.pointerEvents = "auto";
+      agenda.lastAction = "next";
+      agenda.allowSlide = true;
+    }
+  },
+  prev: () => {
+    if (agenda.allowSlide) {
+      agenda.allowSlide = false;
+      let elementToActivate = agenda.elementToPrev.getBoundingClientRect();
+      let count = elementToActivate.bottom + elementToActivate.y;
+      let distance =
+        agenda.counter + count >= -agenda.sliderWrapper.children[0].offsetHeight
+          ? 0
+          : agenda.counter + count;
+
+      agenda.sliderWrapper.style.transform = `translateY(${distance}px) `;
+
+      agenda.nextButton.style.opacity = "1";
+      agenda.nextButton.style.pointerEvents = "auto";
+      agenda.lastAction = "prev";
+      agenda.allowSlide = true;
+    }
+  },
+  handleTransitionEnd: () => {
+    agenda.allowSlide = true;
+    let i = agenda.lastAction === "next" ? agenda.slides.length - 1 : 0;
+    let element = agenda.slides[i];
+
+    if (agenda.isVisible(element)) {
+      let elementToHide = i === 0 ? agenda.prevButton : agenda.nextButton;
+      elementToHide.style.opacity = "0";
+      elementToHide.style.pointerEvents = "none";
+    }
+  },
+  changeDay: (id) => {
+    let element = document.getElementById(id);
+    agenda.sliderWrapper.style.transform = "translateY(0) scale(0)";
+    agenda.sliderWrapper.classList.remove("active");
+    agenda.elementToPrev = null;
+    agenda.sliderWrapper = element;
+    agenda.sliderWrapper.style.transform = "translateY(0) scale(1)";
+    agenda.sliderWrapper.classList.add("active");
+    agenda.slides = element.children;
+    agenda.prevButton.style.opacity = "0";
+    agenda.prevButton.style.pointerEvents = "none";
+    agenda.nextButton.style.opacity = "1";
+    agenda.nextButton.style.pointerEvents = "auto";
+    document.getElementById("day").innerHTML = id;
+  },
+};
+
+let slides = document.getElementsByClassName("agenda__slider");
+for (let i = 0; i < slides.length; i++) {
+  slides[i].addEventListener("transitionend", agenda.handleTransitionEnd);
 }

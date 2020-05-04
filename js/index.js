@@ -494,3 +494,73 @@ for (let i = 0; i < guide.dragWrapper.children.length; i++) {
     element.addEventListener("touchmove", guide.handleTouchMove);
   }
 }
+
+//ticket scripts
+
+let tickets = {
+  section: document.getElementsByClassName("tickets")[0],
+  buttons: document.getElementsByClassName("ticket__button"),
+  payment: document.getElementById("payment"),
+  closeButton: document.getElementsByClassName("payment__close")[0],
+  onTicketClick: (e) => {
+    e.target.parentNode.classList.add("open");
+    tickets.payment.classList.add("open");
+    document.body.style.overflow = "hidden";
+  },
+  onClose: () => {
+    let element = tickets.section.getElementsByClassName("open")[0];
+    if (element) {
+      element.classList.remove("open");
+    }
+    tickets.payment.classList.remove("open");
+    document.body.style.overflow = "auto";
+  },
+};
+
+for (let i = 0; i < tickets.buttons.length; i++) {
+  tickets.buttons[i].addEventListener("click", tickets.onTicketClick);
+}
+
+tickets.closeButton.addEventListener("click", tickets.onClose);
+
+//payment scripts
+
+let payment = {
+  forms: document.getElementsByTagName("form"),
+  types: document.getElementsByClassName("payment__types")[0],
+  promoBox: document.getElementsByClassName("payment__promo")[0],
+  activeForm: "",
+  changeType: (type) => {
+    if (type !== payment.activeForm) {
+      for (let i = 0; i < payment.types.children.length; i++) {
+        let element = payment.types.children[i];
+        let form = payment.forms[i];
+        form.classList.toggle("active");
+        element.classList.toggle("active");
+      }
+      payment.promoBox.classList.toggle("dark");
+      payment.activeForm = type;
+    }
+  },
+};
+
+// policy scripts
+
+let policy = {
+  header: document.getElementsByClassName("policy__header")[0],
+  content: null,
+  title: document.getElementById("policyTitle"),
+  close: () => {
+    policy.header.classList.remove("policy__header__visible");
+    if (policy.content) {
+      policy.content.classList.remove("policy__content__visible");
+    }
+  },
+  open: (e, type) => {
+    policy.close();
+    policy.content = document.getElementById(type);
+    policy.title.innerHTML = e.innerHTML;
+    policy.header.classList.add("policy__header__visible");
+    policy.content.classList.add("policy__content__visible");
+  },
+};

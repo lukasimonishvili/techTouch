@@ -1,6 +1,6 @@
 .aside {
   padding: 48px 0;
-  width: 141px;
+  width: 140px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -50,7 +50,7 @@
 
 .main {
   width: 100%;
-  padding-left: 141px;
+  padding-left: 140px;
 }
 
 .home {
@@ -112,6 +112,7 @@
 
 .info img {
   height: 100%;
+  padding: 0 20px;
   width: auto;
   pointer-events: none;
   user-select: none;
@@ -127,7 +128,6 @@
 
 .speakers {
   width: 100%;
-  height: 100vh;
   background-color: #6239f7;
 }
 
@@ -171,6 +171,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  height: 615px;
 }
 
 .speakers__back {
@@ -217,23 +218,23 @@
 }
 
 .speakers__back > img:nth-child(5) {
-  top: 104px;
-  left: 352px;
+  bottom: -30px;
+  right: 360px;
 }
 
 .speakers__back > img:nth-child(6) {
-  bottom: 72px;
+  bottom: 0;
   left: 59px;
 }
 
 .speakers__back > img:nth-child(7) {
-  bottom: 72px;
+  bottom: 0;
   right: 332px;
   cursor: pointer;
 }
 
 .speakers__back > img:nth-child(8) {
-  bottom: 72px;
+  bottom: 0;
   left: 0px;
   cursor: pointer;
 }
@@ -355,6 +356,7 @@
   line-height: 32px;
   color: black;
   font-family: "Space Mono";
+  max-width: calc(100% - 30px);
 }
 
 .speaker > div > img {
@@ -400,6 +402,7 @@
   top: 50% !important;
   left: 50% !important;
   transform: translate(-100%, -50%) !important;
+  z-index: 100 !important;
 }
 
 .speaker.active > div > img {
@@ -664,6 +667,7 @@
   background-color: #6239f7;
   padding: 0 74px;
   padding-top: 96px;
+  margin-top: -4px;
 }
 
 .tickets__title {
@@ -941,6 +945,7 @@
   padding-top: 49px;
   padding-bottom: 105px;
   background-color: #6239f7;
+  margin-top: -4px;
 }
 
 .contact__title {

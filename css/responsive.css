@@ -1,0 +1,636 @@
+@media screen and (max-width: 1700px) {
+  .payment__close,
+  .policy__close {
+    right: 30px;
+  }
+
+  .ticket.open .price,
+  .policy__title {
+    left: 30px;
+  }
+
+  .policy__content {
+    width: 100%;
+    padding: 0 30px;
+    padding-bottom: 30px;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 1580px) {
+  #home {
+    width: 100%;
+    height: auto;
+    padding: 60px 30px;
+  }
+
+  .home .dragable {
+    width: 25.8%;
+    left: 56.3%;
+    top: 34.8%;
+  }
+
+  .home .dragable img:first-child {
+    top: 5%;
+    right: 3%;
+    height: 10%;
+    width: auto;
+  }
+
+  .home .dragable img:last-child {
+    width: 100%;
+    height: auto;
+  }
+
+  .home .dragable:last-child {
+    width: 51.2%;
+    left: 6.6%;
+    top: 17.3%;
+  }
+
+  .home .logo {
+    width: 20%;
+    height: auto;
+  }
+
+  .cover {
+    width: 75%;
+  }
+
+  .info {
+    padding: 50px 70px;
+  }
+
+  .info p {
+    max-width: calc((180 - 160px) / 3);
+    font-size: 18px;
+  }
+
+  .agenda {
+    padding: 70px;
+    position: relative;
+  }
+
+  .agenda__info {
+    width: calc(100% - 80px);
+  }
+
+  .agenda__title {
+    padding-bottom: 0;
+    margin-bottom: 180px;
+  }
+
+  .agenda > .left {
+    width: 100%;
+  }
+
+  .agenda > .right {
+    width: calc(100% - 140px);
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .agenda__day {
+    margin-right: 20px;
+  }
+
+  .agenda__container {
+    width: calc(100% - 55px);
+    max-width: none;
+  }
+
+  .guide__container {
+    padding: 40px 30px;
+  }
+
+  .guide .dragable p {
+    padding: 15px;
+    overflow-y: auto;
+    height: calc(100% - 99px);
+  }
+
+  .guide .dragable p::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .guide .dragable p::-webkit-scrollbar {
+    background-color: transparent;
+  }
+
+  .guide .dragable p::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  .guide .dragable:first-child {
+    width: 25.8%;
+    height: 46% !important;
+    bottom: 8.3%;
+  }
+
+  .guide .dragable:first-child img:last-child {
+    height: 100%;
+  }
+
+  .guide .dragable:first-child img:first-child {
+    width: 8%;
+    top: 7%;
+    right: 0%;
+  }
+
+  .guide .dragable:nth-child(2) {
+    left: 5.8%;
+    top: 29.4%;
+    height: 39.5%;
+    border-radius: 30.67px;
+  }
+
+  .guide .dragable:last-child {
+    border-radius: 30.67px;
+    height: 42.4%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .topics {
+    padding: 40px 30px;
+  }
+
+  .topics__list li {
+    width: calc((100% - 146px) / 2);
+  }
+
+  .tickets__wrapper {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .ticket {
+    width: 45%;
+    margin-bottom: 30px;
+  }
+
+  .ticket:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact {
+    padding: 50px 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .guide .dragable > div > h4 {
+    font-size: 26px;
+  }
+
+  .guide .dragable > div {
+    min-height: 60px;
+  }
+
+  .guide .dragable > p {
+    font-size: 18px;
+    line-height: 21px;
+    height: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .contact__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact img {
+    opacity: 0;
+  }
+
+  .contact div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact .center {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tickets {
+    padding: 0 30px;
+    padding-top: 40px;
+  }
+
+  .ticket {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .aside {
+    width: 70px;
+  }
+
+  .naviagate {
+    font-size: 16px;
+  }
+
+  .aside .line {
+    margin: 42px 0;
+  }
+
+  .main {
+    padding-left: 70px;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .info p {
+    max-width: 100%;
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid black;
+  }
+
+  .info p:first-child {
+    border-top: none;
+  }
+
+  .info img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ticket.open .price {
+    top: 26px;
+    font-size: 18px;
+  }
+
+  .ticket.open h4 {
+    font-size: 18px;
+    top: 63px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topics__list li {
+    width: 100%;
+  }
+
+  .agenda {
+    padding: 40px;
+  }
+
+  .agenda > .right {
+    top: 70px;
+    left: 10px;
+  }
+
+  .agenda__day,
+  .agenda__scketch {
+    width: calc((100% - 45px) / 4);
+  }
+
+  .agenda__scketch {
+    height: 100px;
+  }
+
+  .agenda__day > .month {
+    font-size: 26px;
+    line-height: 35px;
+  }
+
+  .agenda__day > .number {
+    font-size: 30px;
+    line-height: 65px;
+  }
+
+  .agenda__body {
+    padding: 15px;
+  }
+
+  .agenda__button {
+    display: none;
+  }
+
+  .agenda__info {
+    width: 100%;
+  }
+
+  .agenda__time {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .agenda__speaker {
+    font-size: 17px;
+    line-height: normal;
+  }
+
+  .agenda__speaker span {
+    padding-right: 15px;
+  }
+
+  .agenda__text {
+    font-size: 17px;
+    line-height: 20px;
+    padding-top: 0px;
+  }
+
+  .agenda h6 {
+    font-size: 25px;
+    line-height: 60px;
+  }
+
+  .agenda__arrows {
+    width: 35px;
+  }
+
+  .agenda__arrows img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .guide__title {
+    padding-left: 0;
+    padding-bottom: 10px;
+    line-height: normal;
+    font-size: 45px;
+    pointer-events: none;
+  }
+
+  .guide .dragable:last-child {
+    top: 19px;
+    right: 10px;
+    left: auto !important;
+    transform: translate(0px);
+    z-index: 6;
+    left: 457.328px;
+    width: calc(100% - 180px);
+    height: 45%;
+  }
+
+  .guide__cover {
+    display: none;
+  }
+
+  .guide__container {
+    height: 600px;
+  }
+
+  .guide .dragable:first-child {
+    display: none;
+  }
+
+  .guide .dragable:nth-child(2) {
+    bottom: 10px;
+    left: 10px;
+    width: calc(100% - 180px);
+    height: 40%;
+    top: auto;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .policy__title {
+    font-size: 25px;
+  }
+
+  .payment__container {
+    width: 100%;
+    padding: 50px 30px;
+  }
+
+  .payment__types {
+    font-size: 30px;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .partners {
+    padding: 40px 30px;
+  }
+
+  .partners ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partners ul li {
+    max-width: 70%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+
+  .partners__title {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+
+  .agenda__title {
+    padding-left: 0;
+    margin-bottom: 250px;
+  }
+
+  .agenda__header {
+    padding: 0 15px;
+  }
+
+  .agenda > .right {
+    flex-wrap: wrap;
+    width: 185px;
+  }
+
+  .agenda__day {
+    width: 72px;
+    margin-bottom: 10px;
+  }
+
+  .agenda__scketch {
+    width: 72px;
+  }
+
+  .agenda__scketch img {
+    width: 80%;
+  }
+
+  .tickets__title {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+
+  .ticket h4 {
+    font-size: 28px;
+    line-height: 32px;
+    padding-bottom: 15px;
+  }
+
+  .ticket__access > span {
+    font-size: 18px;
+  }
+
+  .ticket__access__list span {
+    font-size: 18px;
+    word-wrap: break-word;
+    text-align: end;
+  }
+
+  .ticket .price {
+    font-size: 28px;
+  }
+
+  .ticket__access {
+    flex-direction: column;
+  }
+
+  .ticket__access__list {
+    max-width: 80%;
+    margin-left: auto;
+  }
+
+  .ticket__button {
+    font-size: 38px;
+    line-height: 50px;
+  }
+
+  .guide .dragable:last-child {
+    height: 225px;
+    top: 110px;
+    width: 80%;
+  }
+
+  .guide .dragable:nth-child(2) {
+    height: 225px;
+    width: 80%;
+  }
+
+  .guide .dragable > div > h4 {
+    font-size: 16px;
+    word-break: break-all;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .aside {
+    width: 50px;
+  }
+
+  .naviagate {
+    font-size: 14px;
+  }
+
+  .aside .line {
+    margin: 33px 0;
+  }
+
+  .main {
+    padding-left: 50px;
+  }
+
+  .info {
+    padding: 0 30px;
+  }
+
+  .info p {
+    padding: 30px 0;
+  }
+
+  .topics__title {
+    padding-left: 0;
+    padding-bottom: 40px;
+    font-size: 40px;
+  }
+
+  .topics__list li {
+    padding-left: 30px;
+  }
+
+  .topics__list li h4 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .topics__list li h4::before {
+    width: 20px;
+  }
+
+  .contact__title {
+    font-size: 40px;
+    line-height: normal;
+    padding-bottom: 30px;
+  }
+
+  .contact span {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .policy__text.normal {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .policy__header {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .policy__text.bold {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .payment__types {
+    font-size: 24px;
+    justify-content: space-between;
+  }
+
+  .payment__promo div {
+    width: 95px;
+  }
+
+  .ticket__button {
+    font-size: 26px;
+  }
+
+  .agenda__title {
+    font-size: 40px;
+  }
+
+  .agenda__body {
+    flex-direction: column-reverse;
+  }
+
+  .agenda__container {
+    width: 100%;
+  }
+
+  .agenda__arrows {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+
+  .agenda__arrows img {
+    width: 50px;
+  }
+
+  .agenda__arrows img:first-child {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}

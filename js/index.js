@@ -489,9 +489,18 @@ guide.dragWrapper.addEventListener("mouseup", guide.handleMouseUp);
 for (let i = 0; i < guide.dragWrapper.children.length; i++) {
   let element = guide.dragWrapper.children[i];
   if (element.classList[0] === "dragable") {
-    element.addEventListener("mousedown", guide.handleMouseDown);
-    element.addEventListener("touchstart", guide.handleTouchStart);
-    element.addEventListener("touchmove", guide.handleTouchMove);
+    if (i === 0) {
+      element.addEventListener("mousedown", guide.handleMouseDown);
+      element.addEventListener("touchstart", guide.handleTouchStart);
+      element.addEventListener("touchmove", guide.handleTouchMove);
+    } else {
+      element.children[0].addEventListener("mousedown", guide.handleMouseDown);
+      element.children[0].addEventListener(
+        "touchstart",
+        guide.handleTouchStart
+      );
+      element.children[0].addEventListener("touchmove", guide.handleTouchMove);
+    }
   }
 }
 

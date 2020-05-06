@@ -17,10 +17,6 @@
     height: auto;
   }
 
-  /* .speakers__wrapper {
-    height: 615px;
-  } */
-
   .speaker.small:last-child {
     top: 0;
     right: 100px;
@@ -197,6 +193,22 @@
     width: 240px;
   }
 
+  .speaker .image-wrapper {
+    max-height: 240px;
+  }
+
+  .speaker .image-wrapper .circles {
+    border-width: 3px;
+  }
+
+  .speaker .image-wrapper .circles::after {
+    border-width: 3px;
+  }
+
+  .speaker .image-wrapper .circles::before {
+    border-width: 3px;
+  }
+
   .speaker > div > span {
     font-size: 18px;
     line-height: 20px;
@@ -257,6 +269,7 @@
     right: 10px !important;
     left: auto !important;
     top: 0 !important;
+    bottom: auto;
   }
 
   .speaker.small:last-child {
@@ -301,6 +314,10 @@
     top: auto;
     left: 50%;
     transform: translateX(-50%) scale(0);
+  }
+
+  .speaker .image-wrapper {
+    max-height: 150px;
   }
 
   .speakers__back > img:nth-child(5).visible {

@@ -263,6 +263,64 @@
   width: 331px;
   pointer-events: auto;
   transition: 0.4s;
+  background-color: white;
+  border-radius: 25.54px;
+}
+
+.speaker .image-wrapper {
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  max-height: 329px;
+  padding: 0;
+  padding-top: 30px;
+  border-radius: 0 0 25.54px 25.54px;
+  display: block;
+  z-index: 20;
+}
+
+.speaker .image-wrapper img {
+  transform: rotate(0);
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+}
+
+.speaker .image-wrapper .circles {
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  border: 5px solid #f75d19;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.speaker .image-wrapper .circles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  border: 5px solid #f75d19;
+}
+
+.speaker .image-wrapper .circles::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border: 5px solid #f75d19;
 }
 
 .speaker > .info {
@@ -276,6 +334,7 @@
   align-items: flex-start;
   border-radius: 0;
   background-color: transparent;
+  z-index: 21;
 }
 
 .speaker > .info img {

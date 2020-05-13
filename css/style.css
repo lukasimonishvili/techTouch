@@ -1155,6 +1155,10 @@
   user-select: none;
 }
 
+.guide .back {
+  position: relative;
+}
+
 #guideDrag {
   position: absolute;
   top: 0;

@@ -55,6 +55,7 @@
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   display: block;
+  cursor: pointer;
 }
 
 .naviagate.active {

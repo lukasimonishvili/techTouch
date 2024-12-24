@@ -15,19 +15,19 @@
     <aside class="aside">
       <a href="#" class="naviagate"> <span>home</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>speakers</span> </a>
+      <a href="#speakers" class="naviagate"> <span>speakers</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>topics</span> </a>
+      <a href="#topics" class="naviagate"> <span>topics</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>agenda</span> </a>
+      <a href="#agenda" class="naviagate"> <span>agenda</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>tickets</span> </a>
+      <a href="#tickets" class="naviagate"> <span>tickets</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>partners</span> </a>
+      <a href="#partners" class="naviagate"> <span>partners</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>guide</span> </a>
+      <a href="#guide" class="naviagate"> <span>guide</span> </a>
       <div class="line"></div>
-      <a href="#" class="naviagate"> <span>contact</span> </a>
+      <a href="#contact" class="naviagate"> <span>contact</span> </a>
     </aside>
     <main class="main">
       <section class="home">
@@ -72,7 +72,7 @@
         </p>
       </div>
 
-      <section class="speakers">
+      <section class="speakers" id="speakers">
         <div class="speakers__container">
           <div class="speakers__header">
             <h2 class="speakers__title">Speakers</h2>
@@ -357,7 +357,7 @@
         </div>
       </section>
 
-      <section class="topics">
+      <section class="topics" id="topics">
         <h2 class="topics__title">Topics</h2>
         <ul class="topics__list">
           <li>
@@ -423,7 +423,7 @@
 
       <div class="orange"></div>
 
-      <section class="agenda">
+      <section class="agenda" id="agenda">
         <div class="left">
           <h2 class="agenda__title">Agenda</h2>
           <div class="agenda__info">
@@ -797,7 +797,7 @@
         </div>
       </section>
 
-      <section class="tickets">
+      <section class="tickets" id="tickets">
         <h2 class="tickets__title">Tickets</h2>
         <div class="tickets__wrapper">
           <div class="ticket">
@@ -851,7 +851,7 @@
         </div>
       </section>
 
-      <section class="partners">
+      <section class="partners" id="partners">
         <h2 class="partners__title">Partners</h2>
         <ul>
           <li>Onesoul</li>
@@ -894,7 +894,7 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <h2 class="contact__title">Contact</h2>
         <div class="contact__wrapper">
           <div class="left">
@@ -931,7 +931,7 @@
               <div onclick="payment.changeType('c')">Corporate</div>
             </div>
             <div class="payment__form__wrapper">
-              <form  action="" id="p" class="active">
+              <form  action="" id="p" class="active form">
                 <label for="pfullName">Full Name</label>
                 <input type="text" name="fullName" id="pfullName" required />
                 <label for="pcompany">Company</label>
@@ -969,7 +969,7 @@
                 </div>
                 <button type="submit">PAY NOW</button>
               </form>
-              <form  action="" id="c" class="dark">
+              <form  action="" id="c" class="dark form">
                 <label for="cfullName">Full Name</label>
                 <input type="text" name="fullName" id="cfullName" required />
                 <label for="ccompany">Company</label>
